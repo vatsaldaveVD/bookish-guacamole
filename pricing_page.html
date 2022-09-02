@@ -1,449 +1,441 @@
-<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-
-  <style>
+<style>
     html,
     body {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #000;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     #form-wrapper {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     form {
-      width: 90%;
-      max-width: 916px;
+        width: 90%;
+        max-width: 916px;
     }
 
     form #form-title {
-      margin-top: 0;
-      font-weight: 400;
-      text-align: center;
+        margin-top: 0;
+        font-weight: 400;
+        text-align: center;
     }
 
     form #user-amount-slider {
-      display: flex;
-      flex-direction: row;
-      align-content: stretch;
-      position: relative;
-      width: 100%;
-      height: 150px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        position: relative;
+        width: 100%;
+        height: 150px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     form #user-amount-slider::before {
-      content: " ";
-      position: absolute;
-      height: 12px;
-      width: 100%;
-      width: calc(100% * (5 / 6) + 35px);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #e4e9f5;
-      border-radius: 30px;
+        content: " ";
+        position: absolute;
+        height: 12px;
+        width: 100%;
+        width: calc(100% * (5 / 6) + 35px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #e4e9f5;
+        border-radius: 30px;
     }
 
     form #user-amount-slider input,
     form #user-amount-slider label {
-      box-sizing: border-box;
-      flex: 1;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: pointer;
-      text-align: center;
+        box-sizing: border-box;
+        flex: 1;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        text-align: center;
     }
 
     form #user-amount-slider .end-labels::after {
-      border: 1px solid transparent;
-      background: transparent;
+        border: 1px solid transparent;
+        background: transparent;
     }
 
     form #user-amount-slider label {
-      display: inline-block;
-      position: relative;
-      width: 20%;
-      height: 100%;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+        display: inline-block;
+        position: relative;
+        width: 20%;
+        height: 100%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     form #user-amount-slider label::before {
-      content: attr(data-user-amount);
-      position: absolute;
-      left: 50%;
-      padding-top: 10px;
-      transform: translate(-50%, 45px);
-      font-size: 14px;
-      letter-spacing: 0.4px;
-      font-weight: 400;
-      white-space: nowrap;
-      opacity: 0.85;
-      transition: all 0.15s ease-in-out;
+        content: attr(data-user-amount);
+        position: absolute;
+        left: 50%;
+        padding-top: 10px;
+        transform: translate(-50%, 45px);
+        font-size: 14px;
+        letter-spacing: 0.4px;
+        font-weight: 400;
+        white-space: nowrap;
+        opacity: 0.85;
+        transition: all 0.15s ease-in-out;
     }
 
     form #user-amount-slider label::after {
-      content: " ";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 2px;
-      height: 12px;
-      border: 1px solid #a5aec2;
-      background: #a5aec2;
-      pointer-events: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      z-index: 1;
-      cursor: pointer;
-      transition: all 0.15s ease-in-out;
+        content: " ";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 2px;
+        height: 12px;
+        border: 1px solid #a5aec2;
+        background: #a5aec2;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 1;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
     }
 
     form #user-amount-slider input {
-      display: none;
+        display: none;
     }
 
     form #user-amount-slider input:checked+label::before {
-      font-weight: 800;
-      opacity: 1;
+        font-weight: 800;
+        opacity: 1;
     }
 
     form #user-amount-slider input:checked+label::after {
-      border-width: 4px;
-      transform: translate(-50%, -50%) scale(0.75);
+        border-width: 4px;
+        transform: translate(-50%, -50%) scale(0.75);
     }
 
     form #user-amount-slider input:checked~#user-amount-pos {
-      opacity: 1;
+        opacity: 1;
 
-      background: url('./Emojis/person_computer.png');
-      background-repeat: no-repeat !important;
-      background-size: 100% 100% !important;
-      width: 36px;
-      height: 36px;
+        background: url('https://ap-south-1-clientjoy-test.s3.ap-south-1.amazonaws.com/uploads/clientjoy-sign-test1/Workspace/1577/Customers/30830/2b8565f6-2e82-402a-a01b-837200784152?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3JLOPWZBCSEJ5763%2F20220902%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220902T105256Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=38f5f9364aa36bec9e39deb3ed9b545d3eef36cbe443dc91b62c7d0d84bf56d7');
+        background-repeat: no-repeat !important;
+        background-size: 100% 100% !important;
+        width: 36px;
+        height: 36px;
     }
 
     form #user-amount-slider input:checked:nth-child(1)~#user-amount-pos {
-      background: url('./Emojis/person_computer.png');
-      left: 9%;
+        background: url('https://ap-south-1-clientjoy-test.s3.ap-south-1.amazonaws.com/uploads/clientjoy-sign-test1/Workspace/1577/Customers/30830/2b8565f6-2e82-402a-a01b-837200784152?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3JLOPWZBCSEJ5763%2F20220902%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220902T105256Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=38f5f9364aa36bec9e39deb3ed9b545d3eef36cbe443dc91b62c7d0d84bf56d7');
+        left: 9%;
     }
 
     form #user-amount-slider input:checked:nth-child(3)~#user-amount-pos {
-      background: url('./Emojis/car.png');
-      left: 25%;
+        background: url('https://ap-south-1-clientjoy-test.s3.ap-south-1.amazonaws.com/uploads/clientjoy-sign-test1/Workspace/1577/Customers/30830/6f45b4fd-ed3a-42c1-b272-c5b91c6baa10?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3JLOPWZBCSEJ5763%2F20220902%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220902T105256Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=a8754c1f6098dfa4a39847623bcc1a139bcd2d9838a231aaf996a35f45796d46');
+        left: 25%;
     }
 
     form #user-amount-slider input:checked:nth-child(5)~#user-amount-pos {
-      background: url('./Emojis/ship.png');
-      left: 41%;
+        background: url('https://ap-south-1-clientjoy-test.s3.ap-south-1.amazonaws.com/uploads/clientjoy-sign-test1/Workspace/1577/Customers/30830/f3bae1fe-f454-4560-8a9b-803e10f00d9b?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3JLOPWZBCSEJ5763%2F20220902%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220902T105256Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=33227da49b3c0ccbd862c24ca6ba158cb48c878751f3a06fdb0d6985b3355ba2');
+        left: 41%;
     }
 
     form #user-amount-slider input:checked:nth-child(7)~#user-amount-pos {
-      background: url('./Emojis/plane.png');
-      left: 58%;
+        background: url('https://ap-south-1-clientjoy-test.s3.ap-south-1.amazonaws.com/uploads/clientjoy-sign-test1/Workspace/1577/Customers/30830/57e2684f-199d-48c8-b353-3e32e7a6f035?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3JLOPWZBCSEJ5763%2F20220902%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220902T105256Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=a30d23906993b4db8fcbab7278c4a8e9559b8d279268a48df6981143ec262e21');
+        left: 58%;
     }
 
     form #user-amount-slider input:checked:nth-child(9)~#user-amount-pos {
-      background: url('./Emojis/rocket.png');
-      left: 76%;
+        background: url('https://ap-south-1-clientjoy-test.s3.ap-south-1.amazonaws.com/uploads/clientjoy-sign-test1/Workspace/1577/Customers/30830/57ddd735-cacb-4364-a821-f8da19a8adc0?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3JLOPWZBCSEJ5763%2F20220902%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220902T105256Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=29c90f271779b3b51495403b9680ff13bdabd24678fd066807c2f85c46125080');
+        left: 76%;
     }
 
     form #user-amount-slider input:checked:nth-child(11)~#user-amount-pos {
-      background: url('./Emojis/rocket.png');
-      left: 92%;
+        background: url('https://ap-south-1-clientjoy-test.s3.ap-south-1.amazonaws.com/uploads/clientjoy-sign-test1/Workspace/1577/Customers/30830/7c2d38e7-63fc-40a1-9390-af3379fa31b1?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3JLOPWZBCSEJ5763%2F20220902%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220902T105256Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=a064e2a4e79131a7548a2cdbd3f5e143657a36994006be1af5faa8664c7ff255');
+        left: 92%;
     }
 
     form #user-amount-slider #user-amount-pos {
-      display: block;
-      position: absolute;
-      top: 50%;
-      transition: all 0.15s ease-in-out;
-      transform: translate(-50%, -50%);
-      opacity: 1;
-      z-index: 2;
+        display: block;
+        position: absolute;
+        top: 50%;
+        transition: all 0.15s ease-in-out;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        z-index: 2;
     }
 
     form:valid #user-amount-slider input+label::before {
-      transform: translate(-50%, 45px) scale(0.9);
-      transition: all 0.15s linear;
+        transform: translate(-50%, 45px) scale(0.9);
+        transition: all 0.15s linear;
     }
 
     form:valid #user-amount-slider input:checked+label::before {
-      transform: translate(-50%, 45px) scale(1.1);
-      transition: all 0.15s linear;
+        transform: translate(-50%, 45px) scale(1.1);
+        transition: all 0.15s linear;
     }
 
     form+button {
-      display: block;
-      position: relative;
-      margin: 56px auto 0;
-      padding: 10px 20px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      transition: all 0.15s ease-in-out;
-      font-family: inherit;
-      font-size: 24px;
-      font-weight: 600;
-      background: #fff;
-      border: 2px solid #000;
-      border-radius: 8px;
-      outline: 0;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: pointer;
+        display: block;
+        position: relative;
+        margin: 56px auto 0;
+        padding: 10px 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        transition: all 0.15s ease-in-out;
+        font-family: inherit;
+        font-size: 24px;
+        font-weight: 600;
+        background: #fff;
+        border: 2px solid #000;
+        border-radius: 8px;
+        outline: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
     }
 
     form+button:hover {
-      background: #000;
-      color: #fff;
+        background: #000;
+        color: #fff;
     }
 
     form+button:hover:active {
-      transform: scale(0.9);
+        transform: scale(0.9);
     }
 
     form+button:focus {
-      background: #4caf50;
-      border-color: #4caf50;
-      color: #fff;
-      pointer-events: none;
+        background: #4caf50;
+        border-color: #4caf50;
+        color: #fff;
+        pointer-events: none;
     }
 
     form+button:focus::before {
-      -webkit-animation: spin 1s linear infinite;
-      animation: spin 1s linear infinite;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
     }
 
     form+button::before {
-      display: inline-block;
-      width: 0;
-      opacity: 0;
-      font-weight: 900;
-      margin-right: 0;
-      transform: rotate(0deg);
+        display: inline-block;
+        width: 0;
+        opacity: 0;
+        font-weight: 900;
+        margin-right: 0;
+        transform: rotate(0deg);
     }
 
     form:invalid+button {
-      pointer-events: none;
-      opacity: 0.25;
+        pointer-events: none;
+        opacity: 0.25;
     }
 
     @-webkit-keyframes spin {
-      from {
-        transform: rotate(0deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
+        from {
+            transform: rotate(0deg);
+            width: 24px;
+            opacity: 1;
+            margin-right: 12px;
+        }
 
-      to {
-        transform: rotate(360deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
+        to {
+            transform: rotate(360deg);
+            width: 24px;
+            opacity: 1;
+            margin-right: 12px;
+        }
     }
 
     @keyframes spin {
-      from {
-        transform: rotate(0deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
+        from {
+            transform: rotate(0deg);
+            width: 24px;
+            opacity: 1;
+            margin-right: 12px;
+        }
 
-      to {
-        transform: rotate(360deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
+        to {
+            transform: rotate(360deg);
+            width: 24px;
+            opacity: 1;
+            margin-right: 12px;
+        }
     }
 
     .user-info-container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .user-count {
-      font-size: 22px;
-      line-height: 24px;
-      text-align: center;
-      font-weight: 600;
-      font-family: 'Roobert TRIAL', sans-serif;
+        font-size: 22px;
+        line-height: 24px;
+        text-align: center;
+        font-weight: 600;
+        font-family: 'Roobert TRIAL', sans-serif;
 
-      color: #546285;
+        color: #546285;
 
-      padding-top: 20px;
+        padding-top: 20px;
     }
 
     .user-slider-price {
-      color: #2D3958;
+        color: #2D3958;
 
-      font-family: 'Roobert TRIAL', sans-serif;
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 24px;
-      text-align: center;
+        font-family: 'Roobert TRIAL', sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: center;
 
-      margin-bottom: 8px;
+        margin-bottom: 8px;
     }
 
     .user-slider-price-description {
-      font-family: 'Roobert TRIAL', sans-serif;
+        font-family: 'Roobert TRIAL', sans-serif;
 
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 24px;
-      text-align: center;
-      color: #1E8A5E;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: center;
+        color: #1E8A5E;
     }
 
     .user-slider-price-description.text-gray {
-      color: #2D395880;
+        color: #2D395880;
     }
 
     .user-slider-amount-info-wrapper {
-      margin-top: 70px;
+        margin-top: 70px;
     }
 
     .visiblility-hidden {
-      visibility: hidden;
+        visibility: hidden;
     }
 
     .main-card-wrapper {
-      margin-top: 50px;
+        margin-top: 50px;
     }
 
     .button {
-      position: relative;
-      padding: 8px 16px;
-      background: #009579;
-      border: none;
-      outline: none;
-      border-radius: 2px;
-      cursor: pointer;
+        position: relative;
+        padding: 8px 16px;
+        background: #009579;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        cursor: pointer;
 
-      font: bold 20px "Quicksand", san-serif;
-      color: #ffffff;
+        font: bold 20px "Quicksand", san-serif;
+        color: #ffffff;
     }
 
     .button:active {
-      background: #007a63;
+        background: #007a63;
     }
-  </style>
+</style>
 
 </head>
 
 <body>
-  <div id="form-wrapper">
-    <form method="GET">
-      <div id="user-amount-slider">
-        <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="1" value="1" required checked />
-        <label for="1" class="end-labels">
-          <div class="user-info-container">
-            <div class="user-count">1 User</div>
-            <div class="user-slider-amount-info-wrapper">
-              <div class="user-slider-price">$129</div>
-              <div class="user-slider-price-description text-gray">No Discount</div>
+    <div id="form-wrapper">
+        <form method="GET">
+            <div id="user-amount-slider">
+                <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="1" value="1" required
+                    checked />
+                <label for="1" class="end-labels">
+                    <div class="user-info-container">
+                        <div class="user-count">1 User</div>
+                        <div class="user-slider-amount-info-wrapper">
+                            <div class="user-slider-price">$129</div>
+                            <div class="user-slider-price-description text-gray">No Discount</div>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="2" value="2" required />
+                <label for="2">
+                    <div class="user-info-container">
+                        <div class="user-count">2 User</div>
+                        <div class="user-slider-amount-info-wrapper">
+                            <div class="user-slider-price">$229</div>
+                            <div class="user-slider-price-description">5% OFF</div>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="3" value="3" required />
+                <label for="3">
+                    <div class="user-info-container">
+                        <div class="user-count">3 User</div>
+                        <div class="user-slider-amount-info-wrapper">
+                            <div class="user-slider-price">$349</div>
+                            <div class="user-slider-price-description">10% OFF</div>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="4" value="4" required />
+                <label for="4">
+                    <div class="user-info-container">
+                        <div class="user-count">4 User</div>
+                        <div class="user-slider-amount-info-wrapper">
+                            <div class="user-slider-price">$449</div>
+                            <div class="user-slider-price-description">15% OFF</div>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="5" value="5" required />
+                <label for="5">
+                    <div class="user-info-container">
+                        <div class="user-count">5 User</div>
+                        <div class="user-slider-amount-info-wrapper">
+                            <div class="user-slider-price">$499</div>
+                            <div class="user-slider-price-description">20% OFF</div>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="6" value="5" required />
+                <label for="6" class="end-labels">
+                    <div class="user-info-container">
+                        <div class="user-count">6+ User</div>
+                        <div class="user-slider-amount-info-wrapper">
+                            <div class="user-slider-price-description text-gray">Custom</div>
+                            <div class="user-slider-price visiblility-hidden">Custom</div>
+                        </div>
+                    </div>
+                </label>
+                <div id="user-amount-pos">
+                </div>
             </div>
-          </div>
-        </label>
-        <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="2" value="2" required />
-        <label for="2">
-          <div class="user-info-container">
-            <div class="user-count">2 User</div>
-            <div class="user-slider-amount-info-wrapper">
-              <div class="user-slider-price">$229</div>
-              <div class="user-slider-price-description">5% OFF</div>
-            </div>
-          </div>
-        </label>
-        <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="3" value="3" required />
-        <label for="3">
-          <div class="user-info-container">
-            <div class="user-count">3 User</div>
-            <div class="user-slider-amount-info-wrapper">
-              <div class="user-slider-price">$349</div>
-              <div class="user-slider-price-description">10% OFF</div>
-            </div>
-          </div>
-        </label>
-        <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="4" value="4" required />
-        <label for="4">
-          <div class="user-info-container">
-            <div class="user-count">4 User</div>
-            <div class="user-slider-amount-info-wrapper">
-              <div class="user-slider-price">$449</div>
-              <div class="user-slider-price-description">15% OFF</div>
-            </div>
-          </div>
-        </label>
-        <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="5" value="5" required />
-        <label for="5">
-          <div class="user-info-container">
-            <div class="user-count">5 User</div>
-            <div class="user-slider-amount-info-wrapper">
-              <div class="user-slider-price">$499</div>
-              <div class="user-slider-price-description">20% OFF</div>
-            </div>
-          </div>
-        </label>
-        <input type="radio" data-cke-saved-name="user-amount" name="user-addon" id="6" value="5" required />
-        <label for="6" class="end-labels">
-          <div class="user-info-container">
-            <div class="user-count">6+ User</div>
-            <div class="user-slider-amount-info-wrapper">
-              <div class="user-slider-price-description text-gray">Custom</div>
-              <div class="user-slider-price visiblility-hidden">Custom</div>
-            </div>
-          </div>
-        </label>
-        <div id="user-amount-pos">
+        </form>
+
+        <div class="main-card-wrapper">
+            <button class="button" id="get-started-button">
+                Get Started
+            </button>
         </div>
-      </div>
-    </form>
-
-    <div class="main-card-wrapper">
-      <button class="button" id="get-started-button">
-        Get Started
-      </button>
     </div>
-  </div>
 </body>
-
 </html>
