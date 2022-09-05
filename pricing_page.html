@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<body>
   <style>
     :root {
       --no_of_user_addons: 5;
@@ -127,7 +124,7 @@
     form #user-amount-slider .user-addon-input:checked+.user-addon-label::after {
       display: none;
       /* border-width: 4px;
-      transform: translate(-50%, -50%) scale(0.75); */
+          transform: translate(-50%, -50%) scale(0.75); */
     }
 
     form #user-amount-slider .user-addon-input:checked~#user-amount-pos {
@@ -140,29 +137,29 @@
     }
 
     /* form #user-amount-slider .user-addon-input:checked:nth-child(1)~#user-amount-pos {
-      left: 8%;
-    } */
+          left: 8%;
+        } */
 
     /* form #user-amount-slider .user-addon-input:checked:nth-child(3)~#user-amount-pos {
-      left: 25%;
-    } */
+          left: 25%;
+        } */
 
     /* form #user-amount-slider .user-addon-input:checked:nth-child(5)~#user-amount-pos {
-      left: 41%;
-    } */
+          left: 41%;
+        } */
 
     /* form #user-amount-slider .user-addon-input:checked:nth-child(7)~#user-amount-pos {
-      left: 58%;
-    } */
+          left: 58%;
+        } */
 
     /* form #user-amount-slider .user-addon-input:checked:nth-child(9)~#user-amount-pos {
-      left: 76%;
-    } */
+          left: 76%;
+        } */
 
     /* form #user-amount-slider .user-addon-input:checked:nth-child(11)~#user-amount-pos {
-      background: url('https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a71bfb65aab748a107a_pricing_emoji_settings.png');
-      left: 92%;
-    } */
+          background: url('https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a71bfb65aab748a107a_pricing_emoji_settings.png');
+          left: 92%;
+        } */
 
     form #user-amount-slider #user-amount-pos {
       display: block;
@@ -349,7 +346,22 @@
     }
   </style>
 
+  <div id="form-wrapper">
+    <form method="GET">
+      <div id="user-amount-slider" data-user-amount="6">
+      </div>
+    </form>
+
+    <div class="main-card-wrapper">
+      <button class="button" id="get-started-button">
+        Get Started
+      </button>
+    </div>
+  </div>
+
+
   <script type="text/javascript">
+
     let userAddonObject = [
       {
         users: 1,
@@ -394,25 +406,7 @@
       description: 'Custom',
       image_url: 'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a71bfb65aab748a107a_pricing_emoji_settings.png'
     };
-  </script>
-</head>
 
-<body>
-  <div id="form-wrapper">
-    <form method="GET">
-      <div id="user-amount-slider" data-user-amount="6">
-      </div>
-    </form>
-
-    <div class="main-card-wrapper">
-      <button class="button" id="get-started-button">
-        Get Started
-      </button>
-    </div>
-  </div>
-
-
-  <script type="text/javascript">
     document.documentElement.style.setProperty('--no_of_user_addons', userAddonObject.length)
     document.documentElement.style.setProperty('--total_user_addons', userAddonObject.length + 1)
 
@@ -475,5 +469,3 @@
 
   </script>
 </body>
-
-</html>
