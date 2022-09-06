@@ -1,362 +1,361 @@
-<body>
-  <style>
-    :root {
-      --no_of_user_addons: 5;
-      --total_user_addons: 6;
-    }
+<style>
+  :root {
+    --no_of_user_addons: 5;
+    --total_user_addons: 6;
+  }
 
-    #form-wrapper {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  #form-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    form {
-      width: 100%;
-      max-width: 1024px;
-    }
+  form {
+    width: 100%;
+    max-width: 1024px;
+  }
 
-    form #form-title {
-      margin-top: 0;
-      font-weight: 400;
-      text-align: center;
-    }
+  form #form-title {
+    margin-top: 0;
+    font-weight: 400;
+    text-align: center;
+  }
 
-    form #user-amount-slider {
-      display: flex;
-      flex-direction: row;
-      align-content: stretch;
-      position: relative;
-      width: 100%;
-      height: 150px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+  form #user-amount-slider {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-    form #user-amount-slider::before {
-      content: " ";
-      position: absolute;
-      height: 12px;
-      width: 100%;
-      width: calc(100% * (var(--no_of_user_addons) / var(--total_user_addons)) + 35px);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #e4e9f5;
-      border-radius: 30px;
-    }
+  form #user-amount-slider::before {
+    content: " ";
+    position: absolute;
+    height: 12px;
+    width: 100%;
+    width: calc(100% * (var(--no_of_user_addons) / var(--total_user_addons)) + 35px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e4e9f5;
+    border-radius: 30px;
+  }
 
-    form #user-amount-slider .user-addon-input,
-    form #user-amount-slider .user-addon-label {
-      box-sizing: border-box;
-      flex: 1;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: pointer;
-      text-align: center;
-    }
+  form #user-amount-slider .user-addon-input,
+  form #user-amount-slider .user-addon-label {
+    box-sizing: border-box;
+    flex: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+  }
 
-    form #user-amount-slider .user-addon-label:first-of-type::after,
-    form #user-amount-slider .user-addon-label:last-of-type::after {
-      border: 1px solid transparent;
-      background: transparent;
-    }
+  form #user-amount-slider .user-addon-label:first-of-type::after,
+  form #user-amount-slider .user-addon-label:last-of-type::after {
+    border: 1px solid transparent;
+    background: transparent;
+  }
 
-    form #user-amount-slider .user-addon-label {
-      display: inline-block;
-      position: relative;
-      width: 20%;
-      height: 100%;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+  form #user-amount-slider .user-addon-label {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-    form #user-amount-slider .user-addon-label::before {
-      content: attr(data-user-amount);
-      position: absolute;
-      left: 50%;
-      padding-top: 10px;
-      transform: translate(-50%, 45px);
-      font-size: 14px;
-      letter-spacing: 0.4px;
-      font-weight: 400;
-      white-space: nowrap;
-      opacity: 0.85;
-      transition: all 0.15s ease-in-out;
-    }
+  form #user-amount-slider .user-addon-label::before {
+    content: attr(data-user-amount);
+    position: absolute;
+    left: 50%;
+    padding-top: 10px;
+    transform: translate(-50%, 45px);
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0.85;
+    transition: all 0.15s ease-in-out;
+  }
 
-    form #user-amount-slider .user-addon-label::after {
-      content: " ";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 12px;
-      height: 12px;
-      border: 3px solid #a5aec2;
-      border-radius: 50%;
-      pointer-events: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      z-index: 1;
-      cursor: pointer;
-      transition: all 0.15s ease-in-out;
-    }
+  form #user-amount-slider .user-addon-label::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border: 3px solid #a5aec2;
+    border-radius: 50%;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+  }
 
-    form #user-amount-slider .user-addon-input {
-      display: none;
-    }
+  form #user-amount-slider .user-addon-input {
+    display: none;
+  }
 
-    form #user-amount-slider .user-addon-input:checked+.user-addon-label::before {
-      font-weight: 800;
-      opacity: 1;
-    }
+  form #user-amount-slider .user-addon-input:checked+.user-addon-label::before {
+    font-weight: 800;
+    opacity: 1;
+  }
 
-    form #user-amount-slider .user-addon-input:checked+.user-addon-label::after {
-      display: none;
-      /* border-width: 4px;
-          transform: translate(-50%, -50%) scale(0.75); */
-    }
+  form #user-amount-slider .user-addon-input:checked+.user-addon-label::after {
+    display: none;
+    /* border-width: 4px;
+        transform: translate(-50%, -50%) scale(0.75); */
+  }
 
-    form #user-amount-slider .user-addon-input:checked~#user-amount-pos {
-      opacity: 1;
-      background: url('https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a72258fbb15e1fe68c8_pricing_emoji_person_computer.png');
-      background-repeat: no-repeat !important;
-      background-size: 100% 100% !important;
-      width: 36px;
-      height: 36px;
-    }
+  form #user-amount-slider .user-addon-input:checked~#user-amount-pos {
+    opacity: 1;
+    background: url('https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a72258fbb15e1fe68c8_pricing_emoji_person_computer.png');
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+    width: 36px;
+    height: 36px;
+  }
 
-    /* form #user-amount-slider .user-addon-input:checked:nth-child(1)~#user-amount-pos {
-          left: 8%;
-        } */
+  /* form #user-amount-slider .user-addon-input:checked:nth-child(1)~#user-amount-pos {
+        left: 8%;
+      } */
 
-    /* form #user-amount-slider .user-addon-input:checked:nth-child(3)~#user-amount-pos {
-          left: 25%;
-        } */
+  /* form #user-amount-slider .user-addon-input:checked:nth-child(3)~#user-amount-pos {
+        left: 25%;
+      } */
 
-    /* form #user-amount-slider .user-addon-input:checked:nth-child(5)~#user-amount-pos {
-          left: 41%;
-        } */
+  /* form #user-amount-slider .user-addon-input:checked:nth-child(5)~#user-amount-pos {
+        left: 41%;
+      } */
 
-    /* form #user-amount-slider .user-addon-input:checked:nth-child(7)~#user-amount-pos {
-          left: 58%;
-        } */
+  /* form #user-amount-slider .user-addon-input:checked:nth-child(7)~#user-amount-pos {
+        left: 58%;
+      } */
 
-    /* form #user-amount-slider .user-addon-input:checked:nth-child(9)~#user-amount-pos {
-          left: 76%;
-        } */
+  /* form #user-amount-slider .user-addon-input:checked:nth-child(9)~#user-amount-pos {
+        left: 76%;
+      } */
 
-    /* form #user-amount-slider .user-addon-input:checked:nth-child(11)~#user-amount-pos {
-          background: url('https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a71bfb65aab748a107a_pricing_emoji_settings.png');
-          left: 92%;
-        } */
+  /* form #user-amount-slider .user-addon-input:checked:nth-child(11)~#user-amount-pos {
+        background: url('https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a71bfb65aab748a107a_pricing_emoji_settings.png');
+        left: 92%;
+      } */
 
-    form #user-amount-slider #user-amount-pos {
-      display: block;
-      position: absolute;
-      top: 50%;
-      transition: all 0.15s ease-in-out;
-      transform: translate(-50%, -50%);
-      opacity: 1;
-      z-index: 2;
-    }
+  form #user-amount-slider #user-amount-pos {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transition: all 0.15s ease-in-out;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    z-index: 2;
+  }
 
-    form:valid #user-amount-slider .user-addon-input+.user-addon-label::before {
-      transform: translate(-50%, 45px) scale(0.9);
-      transition: all 0.15s linear;
-    }
+  form:valid #user-amount-slider .user-addon-input+.user-addon-label::before {
+    transform: translate(-50%, 45px) scale(0.9);
+    transition: all 0.15s linear;
+  }
 
-    form:valid #user-amount-slider .user-addon-input:checked+.user-addon-label::before {
-      transform: translate(-50%, 45px) scale(1.1);
-      transition: all 0.15s linear;
-    }
+  form:valid #user-amount-slider .user-addon-input:checked+.user-addon-label::before {
+    transform: translate(-50%, 45px) scale(1.1);
+    transition: all 0.15s linear;
+  }
 
-    form+button {
-      display: block;
-      position: relative;
-      margin: 56px auto 0;
-      padding: 10px 20px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      transition: all 0.15s ease-in-out;
-      font-family: inherit;
-      font-size: 24px;
-      font-weight: 600;
-      background: #fff;
-      border: 2px solid #000;
-      border-radius: 8px;
-      outline: 0;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: pointer;
-    }
+  form+button {
+    display: block;
+    position: relative;
+    margin: 56px auto 0;
+    padding: 10px 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: all 0.15s ease-in-out;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 600;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    outline: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
 
-    form+button:hover {
-      background: #000;
-      color: #fff;
-    }
+  form+button:hover {
+    background: #000;
+    color: #fff;
+  }
 
-    form+button:hover:active {
-      transform: scale(0.9);
-    }
+  form+button:hover:active {
+    transform: scale(0.9);
+  }
 
-    form+button:focus {
-      background: #4caf50;
-      border-color: #4caf50;
-      color: #fff;
-      pointer-events: none;
-    }
+  form+button:focus {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: #fff;
+    pointer-events: none;
+  }
 
-    form+button:focus::before {
-      -webkit-animation: spin 1s linear infinite;
-      animation: spin 1s linear infinite;
-    }
+  form+button:focus::before {
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
 
-    form+button::before {
-      display: inline-block;
-      width: 0;
-      opacity: 0;
-      font-weight: 900;
-      margin-right: 0;
+  form+button::before {
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    font-weight: 900;
+    margin-right: 0;
+    transform: rotate(0deg);
+  }
+
+  form:invalid+button {
+    pointer-events: none;
+    opacity: 0.25;
+  }
+
+  @-webkit-keyframes spin {
+    from {
       transform: rotate(0deg);
+      width: 24px;
+      opacity: 1;
+      margin-right: 12px;
     }
 
-    form:invalid+button {
-      pointer-events: none;
-      opacity: 0.25;
+    to {
+      transform: rotate(360deg);
+      width: 24px;
+      opacity: 1;
+      margin-right: 12px;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+      width: 24px;
+      opacity: 1;
+      margin-right: 12px;
     }
 
-    @-webkit-keyframes spin {
-      from {
-        transform: rotate(0deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
-
-      to {
-        transform: rotate(360deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
+    to {
+      transform: rotate(360deg);
+      width: 24px;
+      opacity: 1;
+      margin-right: 12px;
     }
+  }
 
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
+  .user-info-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-      to {
-        transform: rotate(360deg);
-        width: 24px;
-        opacity: 1;
-        margin-right: 12px;
-      }
-    }
+  .user-count {
+    font-size: 22px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Roobert TRIAL', sans-serif;
 
-    .user-info-container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    color: #546285;
 
-    .user-count {
-      font-size: 22px;
-      line-height: 24px;
-      text-align: center;
-      font-weight: 600;
-      font-family: 'Roobert TRIAL', sans-serif;
+    padding-top: 20px;
+  }
 
-      color: #546285;
+  .user-slider-price {
+    color: #2D3958;
 
-      padding-top: 20px;
-    }
+    font-family: 'Roobert TRIAL', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
 
-    .user-slider-price {
-      color: #2D3958;
+    margin-bottom: 8px;
+  }
 
-      font-family: 'Roobert TRIAL', sans-serif;
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 24px;
-      text-align: center;
+  .user-slider-price-description {
+    font-family: 'Roobert TRIAL', sans-serif;
 
-      margin-bottom: 8px;
-    }
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    color: #1E8A5E;
+  }
 
-    .user-slider-price-description {
-      font-family: 'Roobert TRIAL', sans-serif;
+  .user-slider-price-description.text-gray {
+    color: #2D395880;
+  }
 
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 24px;
-      text-align: center;
-      color: #1E8A5E;
-    }
+  .user-slider-amount-info-wrapper {
+    margin-top: 70px;
+  }
 
-    .user-slider-price-description.text-gray {
-      color: #2D395880;
-    }
+  .visiblility-hidden {
+    visibility: hidden;
+  }
 
-    .user-slider-amount-info-wrapper {
-      margin-top: 70px;
-    }
+  .main-card-wrapper {
+    margin-top: 50px;
+  }
 
-    .visiblility-hidden {
-      visibility: hidden;
-    }
+  .button {
+    position: relative;
+    padding: 8px 16px;
+    background: #009579;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
 
-    .main-card-wrapper {
-      margin-top: 50px;
-    }
+    font: bold 20px "Quicksand", san-serif;
+    color: #ffffff;
+  }
 
-    .button {
-      position: relative;
-      padding: 8px 16px;
-      background: #009579;
-      border: none;
-      outline: none;
-      border-radius: 2px;
-      cursor: pointer;
+  .button:active {
+    background: #007a63;
+  }
+</style>
 
-      font: bold 20px "Quicksand", san-serif;
-      color: #ffffff;
-    }
-
-    .button:active {
-      background: #007a63;
-    }
-  </style>
-
-  <div id="form-wrapper">
-    <form method="GET">
-      <div id="user-amount-slider" data-user-amount="6">
-      </div>
-    </form>
-
-    <div class="main-card-wrapper">
-      <button class="button" id="get-started-button">
-        Get Started
-      </button>
+<div id="form-wrapper">
+  <form method="GET">
+    <div id="user-amount-slider" data-user-amount="6">
     </div>
+  </form>
+
+  <div class="main-card-wrapper">
+    <button class="button" id="get-started-button">
+      Get Started
+    </button>
   </div>
-  <script src="https://cdn.jsdelivr.net/gh/vatsaldaveVD/bookish-guacamole@50bc258b345b2a985f2b4c9a70a606e06cb6e2bc/pricing_logic.js" type="text/javascript"></script>
-</body>
+</div>
+
+<script src="./pricing_logic.js" type="text/javascript"></script>
