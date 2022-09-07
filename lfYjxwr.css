@@ -1,0 +1,733 @@
+/* Fonts */
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d87c9059c873c8ced_RoobertTRIAL-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d68b546c1cb053458_RoobertTRIAL-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d2445ea10ce1902ee_RoobertTRIAL-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d43f4081285264e0b_RoobertTRIAL-HeavyItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d294ed54a1aac3d3c_RoobertTRIAL-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d294ed50155ac3d3b_RoobertTRIAL-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707df0a04fb7772570ff_RoobertTRIAL-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d6c52371c530be387_RoobertTRIAL-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707dc006b737d06cb769_RoobertTRIAL-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707df9a7ad07dc05ccc1_RoobertTRIAL-Heavy.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707d48464aa9ec5088a2_RoobertTRIAL-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rooberttrial";
+  src: url("https://assets.website-files.com/62d539593504f114702c1995/62d5707de463d2083727dcaf_RoobertTRIAL-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Root Styles */
+:root {
+  --no_of_user_addons: 5;
+  --total_user_addons: 6;
+}
+
+/* Styles for Pricing Cards */
+.plan-trust-card-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.background-wrapper {
+  position: absolute;
+  left: 0;
+  top: 55%;
+  right: 0;
+  bottom: 0;
+
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  height: 675px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  border-radius: 36px;
+
+  background-color: #f8faff;
+}
+
+.cards-wrapper-with-background {
+  position: absolute;
+  left: 0;
+  top: 55%;
+  right: 0;
+  bottom: 0;
+
+  max-width: 1200px;
+  height: 100%;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  z-index: 0;
+  background-image: url("https://uploads-ssl.webflow.com/62d539593504f114702c1995/63174e02b25d24e265013c75_pricing_pattern.svg");
+  background-repeat: no-repeat !important;
+  background-size: 100% 100%;
+
+  opacity: 0.8;
+}
+
+.plan-card-wrapper {
+  width: 350px;
+  margin-left: 52px;
+}
+
+.plan-card {
+  max-height: 675px;
+  padding: 0 32px 32px;
+
+  background: #2d3958;
+  box-shadow: 0px 2px 12px rgba(51, 60, 79, 0.12);
+
+  border-radius: 16px;
+
+  color: white;
+}
+
+.plan-title-image-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plan-name {
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.plan-image {
+  max-height: 120px;
+  margin-top: 5px;
+  margin-right: -15px;
+}
+
+.plan-discounted-price {
+  margin: 0;
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 70px;
+  color: #ffffff;
+}
+
+.currency-symbol {
+  font-size: 24px;
+  line-height: 28px;
+  position: relative;
+  top: -10px;
+}
+
+.plan-period {
+  font-size: 14px;
+  line-height: 20px;
+  color: #bcc4da;
+}
+
+.plan-original-price {
+  margin: 0 0 0 16px;
+  text-decoration: line-through;
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+
+  color: #7b88a8;
+}
+
+.plan-excerpt-block {
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #d3d6de;
+}
+
+.plan-section-divider {
+  margin: 22px 0;
+  border: 1px solid #415075;
+}
+
+.plan-card-cta-block .pricing-card-primary-button {
+  width: 100%;
+  padding: 16px 0;
+  background: #ffdc79;
+  border-radius: 8px;
+  border-color: #ffdc79;
+  color: #2d3958;
+
+  font-family: "Roobert TRIAL";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  font-size: 14px;
+}
+
+.plan-benefits-list-block {
+  margin-top: 32px;
+}
+
+.plan-benifit-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+
+.plan-benefit-text {
+  margin: 0 0 0 16px;
+}
+
+.payment-partners-wrapper {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-partners-wrapper img {
+  width: auto;
+  max-height: 58px;
+  margin-right: 12px;
+}
+
+.reviews-wrapper img {
+  width: auto;
+  max-height: 60px;
+  margin-right: 12px;
+}
+
+.reviews-wrapper img:last-of-type {
+  width: auto;
+  max-height: 100px;
+}
+
+.reviews-card-wrapper {
+  background-color: white;
+
+  max-width: 835px;
+  margin: 100px auto;
+
+  padding-top: 42px;
+  padding-bottom: 42px;
+
+  border-radius: 24px;
+}
+
+.reviews-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 0;
+}
+
+.main-card-wrapper {
+  position: relative;
+  z-index: 1;
+  top: 60px;
+}
+
+.reviews-card-title {
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+
+  color: #2d3958;
+
+  margin-bottom: 32px;
+}
+
+.money-back-card-wrapper {
+  max-width: 352px;
+  height: 100%;
+
+  background: #ffffff;
+  border: 1px solid #e6eaf5;
+  box-shadow: 0px 2px 12px #1c3b8c;
+  border-radius: 16px;
+
+  padding: 0;
+}
+
+.money-back-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.money-back-badge-image {
+  max-height: 150px;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+.money-back-letter-title {
+  margin: 0;
+  padding: 34px 24px;
+  max-width: 210px;
+
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #2d3958;
+}
+
+.money-back-letter {
+  padding: 0 24px 24px;
+
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #2d3958;
+}
+
+.money-back-letter-subtitle {
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #2d3958;
+}
+
+.money-back-letter-signature {
+  margin-top: 25%;
+  margin-bottom: 0;
+
+  font-family: "Rooberttrial", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #2d3958;
+}
+
+.money-back-letter-signature-image {
+  max-height: 60px;
+  margin-bottom: 10px;
+  margin-left: -50px;
+}
+
+/* Styles for User Slider */
+#form-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+  max-width: 1024px;
+}
+
+form #form-title {
+  margin-top: 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+form #user-amount-slider {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+form #user-amount-slider::before {
+  content: " ";
+  position: absolute;
+  height: 12px;
+  width: 100%;
+  width: calc(100% * (var(--no_of_user_addons) / var(--total_user_addons)) + 15px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e4e9f5;
+  border-radius: 30px;
+}
+
+form #user-amount-slider .user-addon-input,
+form #user-amount-slider .user-addon-label {
+  box-sizing: border-box;
+  flex: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+form #user-amount-slider .user-addon-label {
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+form #user-amount-slider .user-addon-label::before {
+  content: attr(data-user-amount);
+  position: absolute;
+  left: 50%;
+  padding-top: 10px;
+  transform: translate(-50%, 45px);
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0.85;
+  transition: all 0.15s ease-in-out;
+}
+
+form #user-amount-slider .user-addon-label::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border: 3px solid #a5aec2;
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+form #user-amount-slider .user-addon-input {
+  display: none;
+}
+
+form #user-amount-slider .user-addon-input:checked+.user-addon-label::before {
+  font-weight: 800;
+  opacity: 1;
+}
+
+form #user-amount-slider .user-addon-input:checked+.user-addon-label::after {
+  display: none;
+  /* border-width: 4px;
+      transform: translate(-50%, -50%) scale(0.75); */
+}
+
+form #user-amount-slider .user-addon-input:checked~#user-amount-pos {
+  opacity: 1;
+  background: url("https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a72258fbb15e1fe68c8_pricing_emoji_person_computer.png");
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  width: 36px;
+  height: 36px;
+}
+
+/* form #user-amount-slider .user-addon-input:checked:nth-child(1)~#user-amount-pos {
+    left: 8%;
+} */
+
+/* form #user-amount-slider .user-addon-input:checked:nth-child(3)~#user-amount-pos {
+    left: 25%;
+} */
+
+/* form #user-amount-slider .user-addon-input:checked:nth-child(5)~#user-amount-pos {
+    left: 41%;
+} */
+
+/* form #user-amount-slider .user-addon-input:checked:nth-child(7)~#user-amount-pos {
+    left: 58%;
+} */
+
+/* form #user-amount-slider .user-addon-input:checked:nth-child(9)~#user-amount-pos {
+    left: 76%;
+} */
+
+/* form #user-amount-slider .user-addon-input:checked:nth-child(11)~#user-amount-pos {
+    background: url('https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a71bfb65aab748a107a_pricing_emoji_settings.png');
+    left: 92%;
+} */
+
+form #user-amount-slider #user-amount-pos {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transition: all 0.15s ease-in-out;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 2;
+}
+
+form:valid #user-amount-slider .user-addon-input+.user-addon-label::before {
+  transform: translate(-50%, 45px) scale(0.9);
+  transition: all 0.15s linear;
+}
+
+form:valid #user-amount-slider .user-addon-input:checked+.user-addon-label::before {
+  transform: translate(-50%, 45px) scale(1.1);
+  transition: all 0.15s linear;
+}
+
+form+button {
+  display: block;
+  position: relative;
+  margin: 56px auto 0;
+  padding: 10px 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: all 0.15s ease-in-out;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  outline: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+form+button:hover {
+  background: #000;
+  color: #fff;
+}
+
+form+button:hover:active {
+  transform: scale(0.9);
+}
+
+form+button:focus {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  pointer-events: none;
+}
+
+form+button:focus::before {
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+form+button::before {
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  font-weight: 900;
+  margin-right: 0;
+  transform: rotate(0deg);
+}
+
+form:invalid+button {
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+    width: 24px;
+    opacity: 1;
+    margin-right: 12px;
+  }
+
+  to {
+    transform: rotate(360deg);
+    width: 24px;
+    opacity: 1;
+    margin-right: 12px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    width: 24px;
+    opacity: 1;
+    margin-right: 12px;
+  }
+
+  to {
+    transform: rotate(360deg);
+    width: 24px;
+    opacity: 1;
+    margin-right: 12px;
+  }
+}
+
+.user-info-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-count {
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Roobert TRIAL", sans-serif;
+
+  color: #546285;
+
+  padding-top: 20px;
+}
+
+.user-slider-price {
+  color: #2d3958;
+
+  font-family: "Roobert TRIAL", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+
+  margin-bottom: 8px;
+}
+
+.user-slider-price-description {
+  font-family: "Roobert TRIAL", sans-serif;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  color: #1e8a5e;
+}
+
+.user-slider-price-description.text-gray {
+  color: #2d395880;
+}
+
+.user-slider-amount-info-wrapper {
+  margin-top: 70px;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.main-card-wrapper {
+  margin-top: 50px;
+}
