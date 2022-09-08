@@ -161,7 +161,7 @@ userAddonSliderButtons.forEach((element, index) => {
         window.open(`${domainName}/payments/stripe?users=${userObject.users}`)
       }
     }
-    if (userAddonSliderButtons.length == index + 1) {
+    if (eventObject.target.id == 0) {
       document.getElementById('plan-image').src =
         customPlanObject.card_image_url
       document.getElementById('plan-price-after-discount').innerHTML = ''
