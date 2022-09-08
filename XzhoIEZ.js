@@ -91,9 +91,7 @@ userAddonObject.forEach((addonObject, index) => {
     'user-amount-slider'
   ).innerHTML += `<input type="radio" class="user-addon-input" data-cke-saved-name="user-amount" name="user-addon" id="${
     addonObject.users
-  }" value="${addonObject.users}" required ${
-    index == 0 ? 'checked' : ''
-  } /><label for="${
+  }" value="${addonObject.users}" required /><label for="${
     addonObject.users
   }" class="user-addon-label"><div class="user-info-container"><div class="user-count">${
     addonObject.user_count_text
