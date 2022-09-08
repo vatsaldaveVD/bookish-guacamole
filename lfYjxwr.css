@@ -391,6 +391,7 @@
 .ltd-plan-pricing-page form {
   width: 100%;
   max-width: 1024px;
+  margin: 0 auto;
 }
 
 .ltd-plan-pricing-page form #form-title {
