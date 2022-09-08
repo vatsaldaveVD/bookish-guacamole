@@ -9,7 +9,8 @@ if (!userAddonObject) {
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a72258fbb15e1fe68c8_pricing_emoji_person_computer.png',
       card_image_url:
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63173a19ed87b013b781ff03_pricing_emoji_person_computer_100x100.png',
-      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow'
+      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow',
+      cta_text: 'Get Started'
     },
     {
       users: 2,
@@ -20,7 +21,8 @@ if (!userAddonObject) {
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a7164bb4e2da7ab51d4_pricing_emoji_car.png',
       card_image_url:
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63173a18c43a7f2d6ea5568f_pricing_emoji_car_100x100.png',
-      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow'
+      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow',
+      cta_text: 'Get Started'
     },
     {
       users: 3,
@@ -31,7 +33,8 @@ if (!userAddonObject) {
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a716f7b0e3e50e142f2_pricing_emoji_ship.png',
       card_image_url:
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63173a19ed87b0994a81ff02_pricing_emoji_ship_100x100.png',
-      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow'
+      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow',
+      cta_text: 'Get Started'
     },
     {
       users: 4,
@@ -42,7 +45,8 @@ if (!userAddonObject) {
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a7164bb4eb9d4ab51d5_pricing_emoji_plane.png',
       card_image_url:
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63173a19bf708f5ff90ce481_pricing_emoji_plane_100x100.png',
-      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow'
+      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow',
+      cta_text: 'Get Started'
     },
     {
       users: 5,
@@ -53,7 +57,8 @@ if (!userAddonObject) {
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a701424853c75b80859_pricing_emoji_rocket.png',
       card_image_url:
         'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63173a19d53f0e72ddd82e99_pricing_emoji_rocket_100x100.png',
-      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow'
+      card_plan_excerpt: 'Ideal for Small Agencies looking to Grow',
+      cta_text: 'Get Started'
     }
   ]
 }
@@ -67,7 +72,8 @@ if (!customPlanObject) {
       'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63158a71bfb65aab748a107a_pricing_emoji_settings.png',
     card_image_url:
       'https://uploads-ssl.webflow.com/62d539593504f114702c1995/63173a193f94a2b1428b8eb6_pricing_emoji_settings_100x100.png',
-    card_plan_excerpt: 'Need more than ' + userAddonObject.length + ' User'
+    card_plan_excerpt: 'Need more than ' + userAddonObject.length + ' User',
+    cta_text: 'Contact Support'
   }
 }
 var link = document.createElement('link')
@@ -91,9 +97,7 @@ userAddonObject.forEach((addonObject, index) => {
     'user-amount-slider'
   ).innerHTML += `<input type="radio" class="user-addon-input" data-cke-saved-name="user-amount" name="user-addon" id="${
     addonObject.users
-  }" value="${addonObject.users}" required ${
-    index == 0 ? 'checked' : ''
-  } /><label for="${
+  }" value="${addonObject.users}" required /><label for="${
     addonObject.users
   }" class="user-addon-label"><div class="user-info-container"><div class="user-count">${
     addonObject.user_count_text
@@ -156,9 +160,9 @@ userAddonSliderButtons.forEach((element, index) => {
       }
       document.getElementById('plan-excerpt').innerHTML =
         userObject.card_plan_excerpt
-      document.getElementById('get-started-button').innerHTML = 'Get Started'
-      document.getElementById('get-started-button').onclick = (event) => {
-        event.preventDefault()
+      document.getElementById('get-started-button').innerHTML =
+        userObject.cta_text
+      document.getElementById('get-started-button').onclick = () => {
         window.location = `${domainName}/payments/stripe?users=${userObject.users}`
       }
     }
@@ -170,9 +174,8 @@ userAddonSliderButtons.forEach((element, index) => {
       document.getElementById('plan-excerpt').innerHTML =
         customPlanObject.card_plan_excerpt
       document.getElementById('get-started-button').innerHTML =
-        'Contact Support'
-      document.getElementById('get-started-button').onclick = (event) => {
-        event.preventDefault()
+        customPlanObject.cta_text
+      document.getElementById('get-started-button').onclick = () => {
         window.HubSpotConversations && window.HubSpotConversations.widget.open()
       }
     }
