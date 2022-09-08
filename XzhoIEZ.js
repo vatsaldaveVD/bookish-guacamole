@@ -81,7 +81,14 @@ link.rel = 'stylesheet'
 link.type = 'text/css'
 link.href =
   'https://cdn.jsdelivr.net/gh/vatsaldaveVD/bookish-guacamole/lfYjxwr.css'
-document.getElementsByTagName('head')[0].appendChild(link)
+
+if (isEmbedInWebsite && isEmbedInWebsite == true) {
+  document
+    .getElementById('pricing-section-div')
+    .contentDocument.head.appendChild(link)
+} else {
+  document.getElementsByTagName('head')[0].appendChild(link)
+}
 
 document.documentElement.style.setProperty(
   '--no_of_user_addons',
