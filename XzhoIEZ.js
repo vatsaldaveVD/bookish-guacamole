@@ -132,6 +132,10 @@ sliderStyleTag.textContent += `form #user-amount-slider .user-addon-input:checke
   Math.ceil(100 / (userAddonObject.length + 1) / 2)}%;}`
 document.body.appendChild(sliderStyleTag)
 
+document
+  .getElementById('get-started-button')
+  .addEventListener('click', () => planCtaButtonClicked())
+
 //Add Change Event Listners
 let userAddonSliderButtons = document.getElementsByName('user-addon')
 userAddonSliderButtons.forEach((element, index) => {
@@ -162,9 +166,6 @@ userAddonSliderButtons.forEach((element, index) => {
         userObject.card_plan_excerpt
       document.getElementById('get-started-button').innerHTML =
         userObject.cta_text
-      document.getElementById('get-started-button').onclick = () => {
-        window.location = `${domainName}/payments/stripe?users=${userObject.users}`
-      }
     }
     if (eventObject.target.id == 0) {
       document.getElementById('plan-image').src =
@@ -175,9 +176,6 @@ userAddonSliderButtons.forEach((element, index) => {
         customPlanObject.card_plan_excerpt
       document.getElementById('get-started-button').innerHTML =
         customPlanObject.cta_text
-      document.getElementById('get-started-button').onclick = () => {
-        window.HubSpotConversations && window.HubSpotConversations.widget.open()
-      }
     }
   })
 })
