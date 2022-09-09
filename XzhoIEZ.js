@@ -1,3 +1,4 @@
+console.log("🚀 ~ file: XzhoIEZ.js ~ userAddonObject", userAddonObject)
 if (!customPlanObject) {
   var customPlanObject = {
     users: 0,
